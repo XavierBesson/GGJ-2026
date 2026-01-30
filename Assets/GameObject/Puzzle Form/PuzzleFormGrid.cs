@@ -6,19 +6,16 @@ using UnityEngine.Tilemaps;
 public class PuzzleFormGrid : MonoBehaviour
 {
     [SerializeField] private Tilemap tilemap;
+    private PixelCell[] _pixelCellList = FindObjectsOfType<PixelCell>();
 
 
 
-    public EPrimaryColor GetCellState(Vector3Int cellPos)
+
+    public bool VerifieFormIsCompleted()
     {
-        PuzzleFormCell tile = tilemap.GetTile<PuzzleFormCell>(cellPos);
-
-        if (tile == null)
-            return EPrimaryColor.VOID;
-
-        return tile.RequestedColor;
+        foreach (var cell in _pixelCellList)
+            if (cell.CheckColorCondition() == false)
+                return false;
+        return true;
     }
-
-
-
 }

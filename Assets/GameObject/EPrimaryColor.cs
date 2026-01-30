@@ -14,3 +14,15 @@ public enum ESecondaryColor
     CYAN,
     YELLOW
 }
+
+
+public enum EColor
+{
+    VOID,
+    RED,
+    BLUE,
+    GREEN,
+    MAGENTA,
+    CYAN,
+    YELLOW
+}
