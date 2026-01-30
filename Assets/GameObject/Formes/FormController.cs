@@ -6,6 +6,7 @@ public class FormController : MonoBehaviour
 {
 
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private VertexController _vertexController;
 
     private bool _hasClickedOnPlateform = false;
     private bool _isOnPlateform = false;
@@ -16,6 +17,25 @@ public class FormController : MonoBehaviour
     private void Update()
     {
         GetInfo();
+    }
+
+    private void OnEnable()
+    {
+        if (_vertexController == null)
+        {
+            Debug.LogError(_vertexController.name + " non assigné");
+            return;
+        }
+
+        Debug.Log(gameObject.name + " écoute " + _vertexController.name);
+        _vertexController.OnAnyCollision += HandleVertexCollision;
+    }
+
+    private void OnDisable()
+    {
+        if (_vertexController == null) return;
+
+        _vertexController.OnAnyCollision -= HandleVertexCollision;
     }
 
     private void GetInfo()
@@ -31,6 +51,11 @@ public class FormController : MonoBehaviour
         {
             FollowMouse();
         }
+    }
+
+    private void HandleVertexCollision(Collision2D collision)
+    {
+        Debug.Log("Collision with " + collision);
     }
 
     private void FollowMouse()
@@ -55,6 +80,11 @@ public class FormController : MonoBehaviour
     {
         _isOnPlateform = true; 
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log("frighruigqre");
+    //}
 }
 
 
