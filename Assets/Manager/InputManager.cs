@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
 
         _dragInputAction = _playerInput.actions["Drag"];
         _rotateInputAction = _playerInput.actions["Rotate"];
-        _mouseInputAction = _playerInput.actions["Mouse Position"];
+        _mouseInputAction = _playerInput.actions["MousePosition"];
     }
 
     private void Update()
