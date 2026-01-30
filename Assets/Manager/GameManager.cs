@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
     private Dictionary<EColor, int> _colorValueDict = new Dictionary<EColor, int>();
     public Dictionary<EColor, int> ColorValueDict { get => _colorValueDict; }
 
-    void Start()
+    void Awake()
     {
+        Init();
         ColorValueDict.Add(EColor.VOID, 0);
         ColorValueDict.Add(EColor.RED, 2);
         ColorValueDict.Add(EColor.BLUE, 3);

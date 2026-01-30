@@ -5,10 +5,19 @@ using UnityEngine.Tilemaps;
 
 public class PuzzleFormGrid : MonoBehaviour
 {
-    [SerializeField] private Tilemap tilemap;
-    private PixelCell[] _pixelCellList = FindObjectsOfType<PixelCell>();
+    private PixelCell[] _pixelCellList = null;
+
+    private void Start()
+    {
+        _pixelCellList = FindObjectsOfType<PixelCell>();
+    }
 
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            print(VerifieFormIsCompleted());
+    }
 
 
     public bool VerifieFormIsCompleted()
