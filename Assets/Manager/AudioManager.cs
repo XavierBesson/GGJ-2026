@@ -36,6 +36,11 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        PlayMusic("FOCUS_AMBIENT");
+    }
+
 
     public void PlaySFXOneShot(string iD)
     {
