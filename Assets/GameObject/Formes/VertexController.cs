@@ -32,7 +32,7 @@ public class VertexController : MonoBehaviour
     {
         Debug.Log("Collision détectée sur " + collision.gameObject.name);
 
-        if (collision.gameObject.CompareTag("Cercle"))
+        if (collision.gameObject.CompareTag("SnapPoint"))
         {
             Debug.Log("Tag Cercle OK, event envoyé");
             IsVertexOnSnapPoint = true;
@@ -43,7 +43,7 @@ public class VertexController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Cercle"))
+        if (collision.CompareTag("SnapPoint"))
         {
             IsVertexOnSnapPoint = false;
             CollisionTransform = null; 

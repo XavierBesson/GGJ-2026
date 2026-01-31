@@ -23,6 +23,7 @@ public class FormController : MonoBehaviour
     {
         GetInfo();
         SnapGeometrics();
+
     }
 
     private void OnEnable()
