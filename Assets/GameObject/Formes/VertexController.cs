@@ -7,11 +7,13 @@ public class VertexController : MonoBehaviour
 {
 
     private bool _isVertexOnSnapPoint = false;
+    private Transform _collisionTransform; 
 
     private event Action<Collider2D> _onAnyCollision;
 
     #region Properties
     public bool IsVertexOnSnapPoint { get => _isVertexOnSnapPoint; set => _isVertexOnSnapPoint = value; }
+    public Transform CollisionTransform { get => _collisionTransform; set => _collisionTransform = value; }
 
     #endregion
 
@@ -34,6 +36,7 @@ public class VertexController : MonoBehaviour
         {
             Debug.Log("Tag Cercle OK, event envoyé");
             IsVertexOnSnapPoint = true;
+            CollisionTransform =  collision.transform;
             _onAnyCollision?.Invoke(collision);
         }
     }
@@ -43,8 +46,15 @@ public class VertexController : MonoBehaviour
         if (collision.CompareTag("Cercle"))
         {
             IsVertexOnSnapPoint = false;
+            CollisionTransform = null; 
             _onAnyCollision?.Invoke(collision);
         }
+    }
+
+    public void ResetSnap()
+    {
+        IsVertexOnSnapPoint = false;
+        CollisionTransform = null;
     }
 
 }
