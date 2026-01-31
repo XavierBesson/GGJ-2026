@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SFX_TAKE
   m_EditorClassIdentifier: 
   _iD: TAKE
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: fd39b6379740e1a429832a7c530c9598, type: 3}
   _volume: 1
