@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
+        yield return new WaitForSeconds(1.5f);
         _sceneTransitionAnimator.SetTrigger("End");
         yield return new WaitForSeconds(1);
         int currentIndexScene = SceneManager.GetActiveScene().buildIndex;
