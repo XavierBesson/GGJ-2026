@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputManager: {fileID: 360045386}
-  _sceneInBuild: 3
+  _sceneInBuild: 4
 --- !u!1 &1387039966
 GameObject:
   m_ObjectHideFlags: 0
