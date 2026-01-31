@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -565589612506603856, guid: 588993e14c925304e933a13b5dd2a95d, type: 3}
+  m_Sprite: {fileID: 8613678699572345416, guid: 0f17d95ce0ebb0741b11f9877e7227b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,8 +157,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2623306624048110853, guid: 17ac5b38a5c697548a4885721a735dcd, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.079265356, a: 0.49803922}
+  m_Sprite: {fileID: 6754853478070245041, guid: bc6e51ee1e22de44eb46bdfa3d97020a, type: 3}
+  m_Color: {r: 0, g: 1, b: 1, a: 0.49803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -238,15 +238,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3284857237724142693, guid: d6065408c28e8f7479b7332bc8581e7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.87
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 3284857237724142693, guid: d6065408c28e8f7479b7332bc8581e7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 8877743018013886289, guid: d6065408c28e8f7479b7332bc8581e7b, type: 3}
       propertyPath: m_Name
-      value: Level_1_Puzzle
+      value: Level_2_Puzzle
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2011375084147728273, guid: d6065408c28e8f7479b7332bc8581e7b, type: 3}
