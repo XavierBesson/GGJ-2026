@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -30,10 +31,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _SFXSource = null;
     [SerializeField] private AudioSource _musicSource = null;
 
+    private AudioMixerSnapshot _inMenuSnapshot = null;
+    private AudioMixerSnapshot _inGameSnapshot = null;
+
     public void Init()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        _inMenuSnapshot = GetComponent<AudioMixerSnapshot>();
+        _inGameSnapshot = GetComponent<AudioMixerSnapshot>();   
     }
 
     private void Start()
