@@ -10,6 +10,7 @@ public class PuzzleFormGrid : MonoBehaviour
     private void Start()
     {
         _pixelCellList = FindObjectsOfType<PixelCell>();
+        GameManager.Instance.ActualFormGrid = this;
     }
 
 
@@ -25,6 +26,8 @@ public class PuzzleFormGrid : MonoBehaviour
         foreach (var cell in _pixelCellList)
             if (cell.CheckColorCondition() == false)
                 return false;
+
+        //GameLoader.LoadNextScene();
         return true;
     }
 }

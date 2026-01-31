@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
     public static GameManager Instance { get => _instance; set => _instance = value; }
+    private PuzzleFormGrid _actualFormGrid;
     
 
     private Dictionary<EColor, int> _colorValueDict = new Dictionary<EColor, int>();
     public Dictionary<EColor, int> ColorValueDict { get => _colorValueDict; }
+    public PuzzleFormGrid ActualFormGrid { get => _actualFormGrid; set => _actualFormGrid = value; }
 
     void Awake()
     {
