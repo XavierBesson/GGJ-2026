@@ -8,6 +8,7 @@ public class FormController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private VertexController[] _vertexController;
     [SerializeField] private EColor _actualColor = EColor.VOID;
+    [SerializeField] private float _speedFollowMouse = 20.0f; 
 
     private Animator _formsAnimator; 
 
@@ -104,8 +105,7 @@ public class FormController : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         worldPosition.z = transform.position.z;
 
-        float speed = 10f;
-        transform.position = Vector3.Lerp(transform.position, worldPosition, 1f - Mathf.Exp(-speed * Time.deltaTime));
+        transform.position = Vector3.Lerp(transform.position, worldPosition, 1f - Mathf.Exp(-_speedFollowMouse * Time.deltaTime));
     }
 
     private void HandleDragRelease()
