@@ -10,7 +10,8 @@ public class FormController : MonoBehaviour
 
     private bool _hasClickedOnPlateform = false;
     private bool _isOnPlateform = false;
-    private int _check = 0; 
+    private int _check = 0;
+    private bool _hasSnapped; 
 
     [SerializeField] private EColor _actualColor = EColor.VOID;
     public EColor ActualColor { get => _actualColor; set => _actualColor = value; }
@@ -48,6 +49,7 @@ public class FormController : MonoBehaviour
 
     #endregion
 
+    #region Drag
     private void GetInfo()
     {
         InputManager input = InputManager.Instance; 
@@ -59,24 +61,6 @@ public class FormController : MonoBehaviour
 
         if (!_hasClickedOnPlateform) return;
         else if (_hasClickedOnPlateform) { FollowMouse(); }
-    }
-
-    private void HandleVertexCollisionEnter(Collider2D collision)
-    {
-        if (_vertexController == null) return;
-
-        _check = 0;
-
-        for (int i = 0; i <  _vertexController.Length; i++)
-        {
-            if (_vertexController[i].IsVertexOnSnapPoint)
-            {
-                _check++;
-
-                Debug.Log(_check);
-            }
-            
-        }
     }
 
     private void FollowMouse()
@@ -91,6 +75,39 @@ public class FormController : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, worldPosition, 1f - Mathf.Exp(-speed * Time.deltaTime));
     }
+
+    #endregion
+
+    #region Snap
+    private void HandleVertexCollisionEnter(Collider2D collision)
+    {
+        if (_vertexController == null || _hasSnapped) return;
+
+        _check = 0;
+
+        for (int i = 0; i < _vertexController.Length; i++)
+        {
+            if (_vertexController[i].IsVertexOnSnapPoint)
+            {
+                _check++;
+            }
+        }
+
+        Debug.Log("Vertex validés " + _check + " / " + _vertexController.Length);
+
+        if (_check == _vertexController.Length)
+        {
+            SnapGeometrics();
+            Debug.Log("CanBeSnapped");
+        }
+    }
+
+    private void SnapGeometrics()
+    {
+
+    }
+
+    #endregion
 
     private void OnMouseDown()
     {
