@@ -568,6 +568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedMediumTriangle
       objectReference: {fileID: 0}
+    - target: {fileID: 3340813985250797947, guid: 372758172b5222f4994213680f825730, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 2204413995642238761, guid: 5fe1ef06f0cb0e04b862bae882347ad0, type: 3}
     - target: {fileID: 9199385869063064789, guid: 372758172b5222f4994213680f825730, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11

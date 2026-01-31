@@ -77,6 +77,8 @@ public class FormController : MonoBehaviour
 
     private void OnMouseOver()
     {
+        if (_formsAnimator == null) return; 
+
         if (_state != EGeometricsState.Dragging)
         {
             _formsAnimator.SetBool("CanHover", true);
@@ -85,6 +87,8 @@ public class FormController : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (_formsAnimator == null) return;
+
         _formsAnimator.SetBool("CanHover", false);
     }
 
