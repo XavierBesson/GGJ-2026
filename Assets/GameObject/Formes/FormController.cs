@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FormController : MonoBehaviour
 {
@@ -44,9 +45,9 @@ public class FormController : MonoBehaviour
     {
         if (_vertexController == null) return;
 
-        foreach (var vertex in _vertexController)
+        for (int i = 0;  i < _vertexController.Length; i++)
         {
-            vertex.OnAnyCollision += HandleVertexCollisionEnter;
+            _vertexController[i].OnAnyCollision += HandleVertexCollisionEnter;
         }
     }
 
@@ -54,9 +55,9 @@ public class FormController : MonoBehaviour
     {
         if (_vertexController == null) return;
 
-        foreach (var vertex in _vertexController)
+        for (int i = 0; i < _vertexController.Length; i++)
         {
-            vertex.OnAnyCollision -= HandleVertexCollisionEnter;
+            _vertexController[i].OnAnyCollision -= HandleVertexCollisionEnter;
         }
     }
 
@@ -116,14 +117,14 @@ public class FormController : MonoBehaviour
     {
         _checkNumberOfVertex = 0;
 
-        foreach (var vertex in _vertexController)
+        
+        for (int i = 0; i < _vertexController.Length; i++)
         {
-            if (vertex.IsVertexOnSnapPoint)
+            if (_vertexController[i].IsVertexOnSnapPoint)
             {
                 _checkNumberOfVertex++;
             }
         }
-
         _canBeSnapped = _checkNumberOfVertex == _vertexController.Length;
 
         Debug.Log($"Vertex validés {_checkNumberOfVertex} / {_vertexController.Length}");
@@ -134,14 +135,16 @@ public class FormController : MonoBehaviour
         Vector3 center = Vector3.zero;
         int validVertexCount = 0;
 
-        foreach (var vertex in _vertexController)
+        
+        for (int i = 0;  i < _vertexController.Length; i++)
         {
-            if (vertex.CollisionTransform != null)
+            if (_vertexController[i].CollisionTransform != null)
             {
-                center += vertex.CollisionTransform.position;
+                center += _vertexController[i].CollisionTransform.position;
                 validVertexCount++;
             }
         }
+        
 
         if (validVertexCount > 0)
         {
@@ -161,9 +164,9 @@ public class FormController : MonoBehaviour
         _canBeSnapped = false;
         _checkNumberOfVertex = 0;
 
-        foreach (var vertex in _vertexController)
+        for (int i = 0; i < _vertexController.Length;i++)
         {
-            vertex.ResetSnap();
+            _vertexController[i].ResetSnap();
         }
     }
 
