@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         ColorValueDict.Add(EColor.MAGENTA, 5);
         ColorValueDict.Add(EColor.CYAN, 7);
         ColorValueDict.Add(EColor.YELLOW, 6);
+        ColorValueDict.Add(EColor.WHITE, 9);
     }
 
     // Update is called once per frame

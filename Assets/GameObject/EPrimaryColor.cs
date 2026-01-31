@@ -24,5 +24,6 @@ public enum EColor
     GREEN,
     MAGENTA,
     CYAN,
-    YELLOW
+    YELLOW,
+    WHITE
 }
