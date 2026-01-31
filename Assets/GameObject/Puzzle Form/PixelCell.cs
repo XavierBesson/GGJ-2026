@@ -17,14 +17,15 @@ public class PixelCell : MonoBehaviour
     {
         FormController form = collision.gameObject.GetComponent<FormController>();
 
-        _formColorInCell.Add(form.ActualColor);
+        if (form != null)
+            _formColorInCell.Add(form.ActualColor);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         FormController form = collision.gameObject.GetComponent<FormController>();
-
-       _formColorInCell.Remove(form.ActualColor);
+        if (form != null)
+            _formColorInCell.Remove(form.ActualColor);
     }
 
 
