@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class VertexController : MonoBehaviour
 {
-    private event Action<Collision2D> _onAnyCollision;
+    private event Action<Collider2D> _onAnyCollision;
 
-    public event Action<Collision2D> OnAnyCollision
+    public event Action<Collider2D> OnAnyCollision
     {
         add => _onAnyCollision += value;
         remove => _onAnyCollision -= value;
@@ -15,9 +15,8 @@ public class VertexController : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
         Debug.Log("Collision détectée sur " + collision.gameObject.name);
 
         if (collision.gameObject.CompareTag("Cercle"))

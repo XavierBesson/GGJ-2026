@@ -6,7 +6,7 @@ public class FormController : MonoBehaviour
 {
 
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private VertexController _vertexController;
+    [SerializeField] private VertexController[] _vertexController;
 
     private bool _hasClickedOnPlateform = false;
     private bool _isOnPlateform = false;
@@ -14,6 +14,8 @@ public class FormController : MonoBehaviour
     [SerializeField] private EColor _actualColor = EColor.VOID;
     public EColor ActualColor { get => _actualColor; set => _actualColor = value; }
 
+
+    #region Build In Methods
     private void Update()
     {
         GetInfo();
@@ -21,22 +23,29 @@ public class FormController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_vertexController == null)
+
+        if (_vertexController == null) return;
+
+        for (int i = 0; i < _vertexController.Length; i++)
         {
-            Debug.LogError(_vertexController.name + " non assigné");
-            return;
+            Debug.Log(gameObject.name + " écoute " + _vertexController[i].name);    
+            _vertexController[i].OnAnyCollision += HandleVertexCollision; 
         }
 
-        Debug.Log(gameObject.name + " écoute " + _vertexController.name);
-        _vertexController.OnAnyCollision += HandleVertexCollision;
     }
 
     private void OnDisable()
     {
+
         if (_vertexController == null) return;
 
-        _vertexController.OnAnyCollision -= HandleVertexCollision;
+        for (int i = 0; i < _vertexController.Length; i++)
+        {
+            _vertexController[i].OnAnyCollision -= HandleVertexCollision;
+        }
     }
+
+    #endregion
 
     private void GetInfo()
     {
@@ -53,7 +62,7 @@ public class FormController : MonoBehaviour
         }
     }
 
-    private void HandleVertexCollision(Collision2D collision)
+    private void HandleVertexCollision(Collider2D collision)
     {
         Debug.Log("Collision with " + collision);
     }
@@ -81,10 +90,6 @@ public class FormController : MonoBehaviour
         _isOnPlateform = true; 
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Debug.Log("frighruigqre");
-    //}
 }
 
 
