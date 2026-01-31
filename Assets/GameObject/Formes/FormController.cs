@@ -9,6 +9,8 @@ public class FormController : MonoBehaviour
     [SerializeField] private VertexController[] _vertexController;
     [SerializeField] private EColor _actualColor = EColor.VOID;
 
+    private Animator _formsAnimator; 
+
     public EColor ActualColor { get => _actualColor; set => _actualColor = value; }
 
     private enum EGeometricsState
@@ -24,11 +26,13 @@ public class FormController : MonoBehaviour
     private int _checkNumberOfVertex = 0;
     private Vector3 _firstPosition;
 
-    #region Unity
+    #region Build-In Unity Methods
 
     private void Start()
     {
         _firstPosition = transform.position;
+
+        _formsAnimator = GetComponentInChildren<Animator>();      
     }
 
     private void Update()
@@ -73,7 +77,15 @@ public class FormController : MonoBehaviour
 
     private void OnMouseOver()
     {
-        
+        if (_state != EGeometricsState.Dragging)
+        {
+            _formsAnimator.SetBool("CanHover", true);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        _formsAnimator.SetBool("CanHover", false);
     }
 
     #endregion
