@@ -4,176 +4,174 @@ using UnityEngine;
 
 public class FormController : MonoBehaviour
 {
-
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private VertexController[] _vertexController;
-
-    private bool _hasClickedOnPlateform = false;
-    private bool _isOnPlateform = false;
-    private int _checkNumberOfVertex = 0;
-    private bool _canBeSnapped = false; 
-    private bool _hasSnapped;
-    private Vector3 _firstPosition = Vector3.zero;  
-
     [SerializeField] private EColor _actualColor = EColor.VOID;
+
     public EColor ActualColor { get => _actualColor; set => _actualColor = value; }
 
+    private enum EGeometricsState
+    {
+        Idle,
+        Dragging,
+        Snapped
+    }
 
-    #region Unity Build-In Methods
+    private EGeometricsState _state = EGeometricsState.Idle;
+
+    private bool _canBeSnapped = false;
+    private int _checkNumberOfVertex = 0;
+    private Vector3 _firstPosition;
+
+    #region Unity
 
     private void Start()
     {
-        _firstPosition = transform.position; 
+        _firstPosition = transform.position;
     }
+
     private void Update()
     {
-        GetInfo();
-        SnapGeometrics();
+        if (_state == EGeometricsState.Dragging)
+        {
+            FollowMouse();
+        }
 
+        HandleDragRelease();
     }
 
     private void OnEnable()
     {
-
         if (_vertexController == null) return;
 
-        for (int i = 0; i < _vertexController.Length; i++)
+        foreach (var vertex in _vertexController)
         {
-            /*Debug.Log(gameObject.name + " écoute " + _vertexController[i].name);*/    
-            _vertexController[i].OnAnyCollision += HandleVertexCollisionEnter;
+            vertex.OnAnyCollision += HandleVertexCollisionEnter;
         }
-
     }
 
     private void OnDisable()
     {
-
         if (_vertexController == null) return;
 
-        for (int i = 0; i < _vertexController.Length; i++)
+        foreach (var vertex in _vertexController)
         {
-            _vertexController[i].OnAnyCollision -= HandleVertexCollisionEnter;
+            vertex.OnAnyCollision -= HandleVertexCollisionEnter;
         }
     }
 
     private void OnMouseDown()
     {
-        if (_hasSnapped)
+        if (_state == EGeometricsState.Snapped)
         {
             UnsnapGeometrics();
         }
 
-        _hasClickedOnPlateform = true;
+        _state = EGeometricsState.Dragging;
     }
 
     private void OnMouseOver()
     {
-        _isOnPlateform = true;
+        
     }
 
     #endregion
 
     #region Drag
-    private void GetInfo()
-    {
-        InputManager input = InputManager.Instance; 
-
-        if (input.WasDragButtonPressed && _isOnPlateform)
-        {
-            _hasClickedOnPlateform = true;
-        }
-
-        if (!_hasClickedOnPlateform) return;
-        else if (_hasClickedOnPlateform) { FollowMouse(); }
-    }
 
     private void FollowMouse()
     {
         Vector3 mousePosition = InputManager.Instance.MousePosition;
         mousePosition.z = Mathf.Abs(Camera.main.transform.position.z);
 
-        float speed = 10f;
-
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         worldPosition.z = transform.position.z;
 
+        float speed = 10f;
         transform.position = Vector3.Lerp(transform.position, worldPosition, 1f - Mathf.Exp(-speed * Time.deltaTime));
+    }
+
+    private void HandleDragRelease()
+    {
+        if (_state != EGeometricsState.Dragging) return;
+
+        if (InputManager.Instance.WasDragButtonRelased)
+        {
+            if (_canBeSnapped)
+            {
+                SnapGeometrics();
+            }
+            else
+            {
+                ResetGeometricsPosition();
+            }
+        }
     }
 
     #endregion
 
     #region Snap
+
     private void HandleVertexCollisionEnter(Collider2D collision)
     {
-        if (_vertexController == null) return;
-
         _checkNumberOfVertex = 0;
 
-        for (int i = 0; i < _vertexController.Length; i++)
+        foreach (var vertex in _vertexController)
         {
-            if (_vertexController[i].IsVertexOnSnapPoint)
+            if (vertex.IsVertexOnSnapPoint)
             {
                 _checkNumberOfVertex++;
             }
         }
 
-        Debug.Log("Vertex validés " + _checkNumberOfVertex + " / " + _vertexController.Length);
+        _canBeSnapped = _checkNumberOfVertex == _vertexController.Length;
 
-        if (_checkNumberOfVertex == _vertexController.Length)
-        {
-            _canBeSnapped = true;
-        }
-
-        else { _canBeSnapped = false; }
+        Debug.Log($"Vertex validés {_checkNumberOfVertex} / {_vertexController.Length}");
     }
 
     private void SnapGeometrics()
     {
-        
-        if (_vertexController != null)
+        Vector3 center = Vector3.zero;
+        int validVertexCount = 0;
+
+        foreach (var vertex in _vertexController)
         {
-            if (!_canBeSnapped && _hasClickedOnPlateform && _hasSnapped) return;
-
-            else if (_canBeSnapped && InputManager.Instance.WasDragButtonPressed)
+            if (vertex.CollisionTransform != null)
             {
-                Vector3 center = Vector3.zero;
-
-                for (int i = 0; i < _vertexController.Length; i++)
-                {
-                    if (_vertexController[i].CollisionTransform != null)
-                    {
-                        center += _vertexController[i].CollisionTransform.position;
-                    }
-                }
-
-                center /= _vertexController.Length;
-
-                transform.position = center;
-                _hasSnapped = true;
-                _hasClickedOnPlateform = false;
-                print(GameManager.Instance.ActualFormGrid.VerifieFormIsCompleted());
-
+                center += vertex.CollisionTransform.position;
+                validVertexCount++;
             }
         }
-       
+
+        if (validVertexCount > 0)
+        {
+            center /= validVertexCount;
+            transform.position = center;
+        }
+
+        _state = EGeometricsState.Snapped;
+        _canBeSnapped = false;
+
+        Debug.Log(GameManager.Instance.ActualFormGrid.VerifieFormIsCompleted());
     }
 
     private void UnsnapGeometrics()
     {
-        _hasSnapped = false;
+        _state = EGeometricsState.Idle;
         _canBeSnapped = false;
         _checkNumberOfVertex = 0;
 
-        for (int i = 0; i < _vertexController.Length; i++)
+        foreach (var vertex in _vertexController)
         {
-            _vertexController[i].ResetSnap();
+            vertex.ResetSnap();
         }
-
     }
 
     private void ResetGeometricsPosition()
     {
-        transform.position = _firstPosition; 
+        transform.position = _firstPosition;
+        _state = EGeometricsState.Idle;
+        _canBeSnapped = false;
     }
 
     #endregion
