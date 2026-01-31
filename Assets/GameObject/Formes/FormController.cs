@@ -13,12 +13,18 @@ public class FormController : MonoBehaviour
     private int _checkNumberOfVertex = 0;
     private bool _canBeSnapped = false; 
     private bool _hasSnapped;
+    private Vector3 _firstPosition = Vector3.zero;  
 
     [SerializeField] private EColor _actualColor = EColor.VOID;
     public EColor ActualColor { get => _actualColor; set => _actualColor = value; }
 
 
     #region Unity Build-In Methods
+
+    private void Start()
+    {
+        _firstPosition = transform.position; 
+    }
     private void Update()
     {
         GetInfo();
@@ -167,7 +173,7 @@ public class FormController : MonoBehaviour
 
     private void ResetGeometricsPosition()
     {
-
+        transform.position = _firstPosition; 
     }
 
     #endregion
