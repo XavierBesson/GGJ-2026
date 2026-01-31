@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6659106576090459994}
   - component: {fileID: 8394668002608979656}
   m_Layer: 6
-  m_Name: BlueBigTriangle 1
+  m_Name: BlueBigTriangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,8 +163,8 @@ Transform:
   m_GameObject: {fileID: 3441102211969281724}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: 0}
-  m_LocalScale: {x: 18.8, y: 18.8, z: 18.8}
+  m_LocalPosition: {x: -2, y: -2, z: 0}
+  m_LocalScale: {x: 1.87, y: 1.87, z: 1.87}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9199385869063064789}
