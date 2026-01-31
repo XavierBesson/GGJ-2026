@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
 
     private static GameManager _instance;
+    [SerializeField] private Animator _sceneTransitionAnimator;
+
     public static GameManager Instance { get => _instance; set => _instance = value; }
     private PuzzleFormGrid _actualFormGrid;
     
@@ -44,8 +46,17 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextLevel()
     {
+        StartCoroutine(LoadNextLevel());
+    }
+
+
+    IEnumerator LoadNextLevel()
+    {
+        _sceneTransitionAnimator.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         int currentIndexScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndexScene + 1);
+        _sceneTransitionAnimator.SetTrigger("Start");
     }
 
 
