@@ -31,7 +31,6 @@ public class FormController : MonoBehaviour
     private void Start()
     {
         _firstPosition = transform.position;
-        AudioManager.Instance.PlayMusic("FOCUS_AMBIENT");
 
         _formsAnimator = GetComponentInChildren<Animator>();      
     }
