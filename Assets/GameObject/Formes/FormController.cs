@@ -111,12 +111,14 @@ public class FormController : MonoBehaviour
             }
         }
 
-        //Debug.Log("Vertex validés " + _checkNumberOfVertex + " / " + _vertexController.Length);
+        Debug.Log("Vertex validés " + _checkNumberOfVertex + " / " + _vertexController.Length);
 
         if (_checkNumberOfVertex == _vertexController.Length)
         {
-            _canBeSnapped = true; 
+            _canBeSnapped = true;
         }
+
+        else { _canBeSnapped = false; }
     }
 
     private void SnapGeometrics()
@@ -159,6 +161,11 @@ public class FormController : MonoBehaviour
         {
             _vertexController[i].ResetSnap();
         }
+
+    }
+
+    private void ResetGeometricsPosition()
+    {
 
     }
 
