@@ -38,4 +38,13 @@ public class VertexController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Cercle"))
+        {
+            IsVertexOnSnapPoint = false;
+            _onAnyCollision?.Invoke(collision);
+        }
+    }
+
 }
