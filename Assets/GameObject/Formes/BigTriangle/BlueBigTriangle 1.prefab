@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6659106576090459994}
   - component: {fileID: 8394668002608979656}
   m_Layer: 6
-  m_Name: BigTriangle
+  m_Name: BlueBigTriangle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   - {fileID: 6908316705197782306}
   - {fileID: 5176194080053033061}
   - {fileID: 4185167324114915532}
-  _actualColor: 0
+  _actualColor: 2
 --- !u!60 &8394668002608979656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -210,8 +210,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5381379623813277822, guid: b09a859597d86414081a90bd18a9325c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -381916396296639798, guid: 1a79f564b8805d7468c989c9c51fbf86, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
