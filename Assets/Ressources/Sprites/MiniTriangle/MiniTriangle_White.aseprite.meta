@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ea6cebaff21ded40824db7abd3e52fe
+guid: dafb5f101d8f945428ae8d8a11351ad1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,7 +124,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: MiniTriangle_White
     originalName: 
-    pivot: {x: 0.5, y: -2}
+    pivot: {x: 0.5, y: 0.33}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -133,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 16
-    spriteID: eed8888e3ce4a6644b144a9541b535d0
+    spriteID: fc9196c1712e6af4e9a4e70baed58832
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,10 +161,10 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 16
-        y: 32
+        y: 48
         width: 32
         height: 16
-      spriteId: eed8888e3ce4a6644b144a9541b535d0
+      spriteId: fc9196c1712e6af4e9a4e70baed58832
     linkedCells: []
     parentIndex: -1
   platformSettings:

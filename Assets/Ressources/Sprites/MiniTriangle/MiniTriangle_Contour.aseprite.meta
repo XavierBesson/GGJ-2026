@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0688bc89ce35154aa19be5f5093a613
+guid: 0f17d95ce0ebb0741b11f9877e7227b3
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,7 +124,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: MiniTriangle_Contour
     originalName: 
-    pivot: {x: 1, y: -1}
+    pivot: {x: 0.5, y: 0.33}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -133,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 16
-    spriteID: 590a0b5f7667337429f05017b2bcd9d0
+    spriteID: 997acc9df4d25f8428694e99f5bf459d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,11 +160,11 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 16
+        x: 16
+        y: 48
         width: 32
         height: 16
-      spriteId: 590a0b5f7667337429f05017b2bcd9d0
+      spriteId: 997acc9df4d25f8428694e99f5bf459d
     linkedCells: []
     parentIndex: -1
   platformSettings:
