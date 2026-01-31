@@ -10,6 +10,7 @@ public class FormController : MonoBehaviour
 
     private bool _hasClickedOnPlateform = false;
     private bool _isOnPlateform = false;
+    private int _check = 0; 
 
     [SerializeField] private EColor _actualColor = EColor.VOID;
     public EColor ActualColor { get => _actualColor; set => _actualColor = value; }
@@ -28,8 +29,8 @@ public class FormController : MonoBehaviour
 
         for (int i = 0; i < _vertexController.Length; i++)
         {
-            Debug.Log(gameObject.name + " écoute " + _vertexController[i].name);    
-            _vertexController[i].OnAnyCollision += HandleVertexCollision; 
+            /*Debug.Log(gameObject.name + " écoute " + _vertexController[i].name);*/    
+            _vertexController[i].OnAnyCollision += HandleVertexCollisionEnter;
         }
 
     }
@@ -41,7 +42,7 @@ public class FormController : MonoBehaviour
 
         for (int i = 0; i < _vertexController.Length; i++)
         {
-            _vertexController[i].OnAnyCollision -= HandleVertexCollision;
+            _vertexController[i].OnAnyCollision -= HandleVertexCollisionEnter;
         }
     }
 
@@ -56,15 +57,26 @@ public class FormController : MonoBehaviour
             _hasClickedOnPlateform = true;
         }
 
-        if (_hasClickedOnPlateform)
-        {
-            FollowMouse();
-        }
+        if (!_hasClickedOnPlateform) return;
+        else if (_hasClickedOnPlateform) { FollowMouse(); }
     }
 
-    private void HandleVertexCollision(Collider2D collision)
+    private void HandleVertexCollisionEnter(Collider2D collision)
     {
-        Debug.Log("Collision with " + collision);
+        if (_vertexController == null) return;
+
+        _check = 0;
+
+        for (int i = 0; i <  _vertexController.Length; i++)
+        {
+            if (_vertexController[i].IsVertexOnSnapPoint)
+            {
+                _check++;
+
+                Debug.Log(_check);
+            }
+            
+        }
     }
 
     private void FollowMouse()
