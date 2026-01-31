@@ -8,7 +8,7 @@ public class FormController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private VertexController[] _vertexController;
     [SerializeField] private EColor _actualColor = EColor.VOID;
-    [SerializeField] private float _speedFollowMouse = 20.0f; 
+    [SerializeField] private float _speedFollowMouse = 50.0f; 
 
     private Animator _formsAnimator; 
 
