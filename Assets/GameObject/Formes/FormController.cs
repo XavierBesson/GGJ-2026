@@ -145,7 +145,7 @@ public class FormController : MonoBehaviour
                 transform.position = center;
                 _hasSnapped = true;
                 _hasClickedOnPlateform = false;
-                GameManager.Instance.ActualFormGrid.VerifieFormIsCompleted();
+                print(GameManager.Instance.ActualFormGrid.VerifieFormIsCompleted());
 
             }
         }
