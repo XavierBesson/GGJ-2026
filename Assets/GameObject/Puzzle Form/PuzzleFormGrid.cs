@@ -27,7 +27,7 @@ public class PuzzleFormGrid : MonoBehaviour
             if (cell.CheckColorCondition() == false)
                 return false;
 
-        //GameLoader.LoadNextScene();
+        GameManager.Instance.GoToNextLevel();
         return true;
     }
 }
