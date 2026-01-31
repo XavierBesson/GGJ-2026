@@ -64,4 +64,17 @@ public class AudioManager : MonoBehaviour
         _musicSource.Play();
     }
 
+    public void SetLowPassChange(bool canChange)
+    {
+        if (canChange)
+        {
+            _inGameSnapshot.TransitionTo(0.01f);
+        }
+
+        else if (!canChange)
+        {
+            _inMenuSnapshot.TransitionTo(0.01f);
+        }
+    }
+
 }
