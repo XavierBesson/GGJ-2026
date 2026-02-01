@@ -354,11 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -601,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -692,11 +692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1089,11 +1089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1307,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1483,11 +1483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1783,7 +1783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995201061896896373, guid: 26c066ba5d809ba4e8e2fd6b318ed0ee, type: 3}
       propertyPath: m_LocalPosition.z
