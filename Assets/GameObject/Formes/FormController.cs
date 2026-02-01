@@ -73,21 +73,23 @@ public class FormController : MonoBehaviour
             UnsnapGeometrics();
         }
 
-        _state = EGeometricsState.Dragging;
+        if (GameManager.Instance.InTransition == false)
+            _state = EGeometricsState.Dragging;
     }
 
     private void OnMouseEnter()
     {
-        if (_state == EGeometricsState.Dragging) return; 
-        
-        AudioManager.Instance.PlaySFXOneShot("ON_HOVERED", true);
+        if (_state == EGeometricsState.Dragging) return;
+
+        if (GameManager.Instance.InTransition == false)
+            AudioManager.Instance.PlaySFXOneShot("ON_HOVERED", true);
     }
 
     private void OnMouseOver()
     {
         if (_formsAnimator == null) return; 
 
-        if (_state != EGeometricsState.Dragging)
+        if (_state != EGeometricsState.Dragging && GameManager.Instance.InTransition == false)
         {
             _formsAnimator.SetBool("CanHover", true);
         }

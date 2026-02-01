@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get => _instance; set => _instance = value; }
     private PuzzleFormGrid _actualFormGrid;
+    private bool _inTransition = false;
     
 
     private Dictionary<EColor, int> _colorValueDict = new Dictionary<EColor, int>();
     public Dictionary<EColor, int> ColorValueDict { get => _colorValueDict; }
     public PuzzleFormGrid ActualFormGrid { get => _actualFormGrid; set => _actualFormGrid = value; }
+    public bool InTransition { get => _inTransition; set => _inTransition = value; }
 
     void Awake()
     {
@@ -53,13 +55,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
+        InTransition = true;
+        AudioManager.Instance.PlaySFXOneShot("NEW_LEVEL", false);
         yield return new WaitForSeconds(1.5f);
         _sceneTransitionAnimator.SetTrigger("End");
         yield return new WaitForSeconds(1);
         int currentIndexScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndexScene + 1);
-        AudioManager.Instance.PlaySFXOneShot("NEW_LEVEL", false);
         _sceneTransitionAnimator.SetTrigger("Start");
+        InTransition = false;
     }
 
 
