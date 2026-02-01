@@ -93,6 +93,7 @@ MonoBehaviour:
   - {fileID: 5213213308216522648}
   _actualColor: 2
   _speedFollowMouse: 50
+  _isMainMenu: 0
 --- !u!60 &8394668002608979656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -342,11 +343,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.x
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.y
-      value: 6
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 7721963085721237853, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_LocalPosition.x
@@ -423,11 +424,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.x
-      value: -3
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.y
-      value: 6
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 7721963085721237853, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_LocalPosition.x
@@ -504,11 +505,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.x
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.y
-      value: -6
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 7721963085721237853, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_LocalPosition.x
@@ -585,11 +586,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.x
-      value: -3
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5670481486388739509, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_Offset.y
-      value: -6
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 7721963085721237853, guid: cfc2eacbe489ffc4dbe69b77db71c263, type: 3}
       propertyPath: m_LocalPosition.x
