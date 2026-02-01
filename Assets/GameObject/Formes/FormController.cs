@@ -8,7 +8,8 @@ public class FormController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private VertexController[] _vertexController;
     [SerializeField] private EColor _actualColor = EColor.VOID;
-    [SerializeField] private float _speedFollowMouse = 50.0f; 
+    [SerializeField] private float _speedFollowMouse = 50.0f;
+    [SerializeField] private bool _isMainMenu = false;
 
     private Animator _formsAnimator; 
 
@@ -191,7 +192,10 @@ public class FormController : MonoBehaviour
         _state = EGeometricsState.Snapped;
         _canBeSnapped = false;
 
-        Debug.Log(GameManager.Instance.ActualFormGrid.VerifieFormIsCompleted());
+        if (!_isMainMenu)
+            GameManager.Instance.ActualFormGrid.VerifieFormIsCompleted();
+        else
+            GameManager.Instance.MainMenuFormGrid.VerifieFormIsCompleted();
     }
 
     private void UnsnapGeometrics()

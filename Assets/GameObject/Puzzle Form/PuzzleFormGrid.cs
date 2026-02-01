@@ -16,8 +16,7 @@ public class PuzzleFormGrid : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            print(VerifieFormIsCompleted());
+        
     }
 
 

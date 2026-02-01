@@ -14,12 +14,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get => _instance; set => _instance = value; }
     private PuzzleFormGrid _actualFormGrid;
     private bool _inTransition = false;
+    private MainMenuFormGrid _mainMenuFormGrid;
     
 
     private Dictionary<EColor, int> _colorValueDict = new Dictionary<EColor, int>();
     public Dictionary<EColor, int> ColorValueDict { get => _colorValueDict; }
     public PuzzleFormGrid ActualFormGrid { get => _actualFormGrid; set => _actualFormGrid = value; }
     public bool InTransition { get => _inTransition; set => _inTransition = value; }
+    public MainMenuFormGrid MainMenuFormGrid { get => _mainMenuFormGrid; set => _mainMenuFormGrid = value; }
 
     void Awake()
     {
