@@ -7,7 +7,7 @@ public class SoundData : ScriptableObject
 {
     [SerializeField] private string _iD = "EMPTY";
     [SerializeField] private AudioClip _audioClip = null;
-    [Range(0, 1)][SerializeField] private float _volume = 1.0f;
+    [Range(0, 1.5f)][SerializeField] private float _volume = 1.0f;
 
     public string ID { get => _iD; }
     public AudioClip AudioClip { get => _audioClip; }
