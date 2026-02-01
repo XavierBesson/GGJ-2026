@@ -90,6 +90,7 @@ MonoBehaviour:
   - {fileID: 5176194080053033061}
   - {fileID: 4185167324114915532}
   _actualColor: 1
+  _speedFollowMouse: 50
 --- !u!60 &8394668002608979656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1873712107143074872, guid: 861f7efc87b877545aa2c0c2fbbb9aa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_FlipX: 0
@@ -295,7 +296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6852268119287629733, guid: d6a273287618445428a08b21f717f0ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -90,6 +90,7 @@ MonoBehaviour:
   - {fileID: 5176194080053033061}
   - {fileID: 4185167324114915532}
   _actualColor: 3
+  _speedFollowMouse: 50
 --- !u!60 &8394668002608979656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5381379623813277822, guid: b09a859597d86414081a90bd18a9325c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_FlipX: 0
@@ -249,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 5215276360281490522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0375, y: 0, z: 0}
+  m_LocalPosition: {x: 2.0375, y: 2.0375, z: 0}
   m_LocalScale: {x: 1.87, y: 1.87, z: 1.87}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -295,7 +296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2842023015189853022, guid: cbfe5fa22966f97459a5b2ee07b31449, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

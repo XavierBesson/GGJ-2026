@@ -353,7 +353,7 @@ MonoBehaviour:
   _gameManager: {fileID: 1457488815}
   _databaseManager: {fileID: 1702327707}
   _audioManager: {fileID: 1715588869}
-  _sceneInBuild: 1
+  _sceneInBuild: 6
 --- !u!1 &628751411
 GameObject:
   m_ObjectHideFlags: 0
