@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGFixe
       objectReference: {fileID: 0}
+    - target: {fileID: 7116107057038716203, guid: 78840a11473b5984b893ef1a20046fa1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

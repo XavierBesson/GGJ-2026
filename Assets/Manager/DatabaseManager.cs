@@ -60,7 +60,7 @@ public class DatabaseManager : MonoBehaviour
 
     public SoundData GetSFXByID(string iD)
     {
-        if (_musics[iD] != null)
+        if (_sounds[iD] != null)
             return _sounds[iD];
         return null;
     }

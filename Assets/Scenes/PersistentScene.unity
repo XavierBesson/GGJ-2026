@@ -353,7 +353,7 @@ MonoBehaviour:
   _gameManager: {fileID: 1457488815}
   _databaseManager: {fileID: 1702327707}
   _audioManager: {fileID: 1715588869}
-  _sceneInBuild: 1
+  _sceneInBuild: 5
 --- !u!1 &1457488814
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

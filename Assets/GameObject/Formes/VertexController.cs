@@ -30,11 +30,9 @@ public class VertexController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision détectée sur " + collision.gameObject.name);
 
         if (collision.gameObject.CompareTag("SnapPoint"))
         {
-            Debug.Log("Tag Cercle OK, event envoyé");
             IsVertexOnSnapPoint = true;
             CollisionTransform =  collision.transform;
             _onAnyCollision?.Invoke(collision);

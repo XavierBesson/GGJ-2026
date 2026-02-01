@@ -76,6 +76,13 @@ public class FormController : MonoBehaviour
         _state = EGeometricsState.Dragging;
     }
 
+    private void OnMouseEnter()
+    {
+        if (_state == EGeometricsState.Dragging) return; 
+        
+        AudioManager.Instance.PlaySFXOneShot("ON_HOVERED");
+    }
+
     private void OnMouseOver()
     {
         if (_formsAnimator == null) return; 
@@ -141,7 +148,17 @@ public class FormController : MonoBehaviour
                 _checkNumberOfVertex++;
             }
         }
-        _canBeSnapped = _checkNumberOfVertex == _vertexController.Length;
+
+
+        if (_checkNumberOfVertex == _vertexController.Length)
+        {
+            _canBeSnapped = true;
+        }
+        else
+        {
+            _canBeSnapped = false;
+        }
+
 
         Debug.Log($"Vertex validés {_checkNumberOfVertex} / {_vertexController.Length}");
     }
@@ -166,6 +183,7 @@ public class FormController : MonoBehaviour
         {
             center /= validVertexCount;
             transform.position = center;
+            AudioManager.Instance.PlaySFXOneShot("LOCK");
         }
 
         _state = EGeometricsState.Snapped;
@@ -191,6 +209,7 @@ public class FormController : MonoBehaviour
         transform.position = _firstPosition;
         _state = EGeometricsState.Idle;
         _canBeSnapped = false;
+        AudioManager.Instance.PlaySFXOneShot("DROP");
     }
 
     #endregion
