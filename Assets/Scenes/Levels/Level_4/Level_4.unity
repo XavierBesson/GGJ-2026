@@ -1222,6 +1222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueRectangle
       objectReference: {fileID: 0}
+    - target: {fileID: 7548908428689748923, guid: d46d5eb69510d0241963e42f862986cc, type: 3}
+      propertyPath: m_Offset.y
+      value: 6.4
+      objectReference: {fileID: 0}
     - target: {fileID: 9199385869063064789, guid: d46d5eb69510d0241963e42f862986cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.88
