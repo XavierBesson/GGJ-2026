@@ -69,6 +69,8 @@ public class FormController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioManager.Instance.PlaySFXOneShot("TAKE", false);
+        
         if (_state == EGeometricsState.Snapped)
         {
             UnsnapGeometrics();
