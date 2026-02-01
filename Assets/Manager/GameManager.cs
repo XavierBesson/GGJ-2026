@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         int currentIndexScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndexScene + 1);
-        AudioManager.Instance.PlaySFXOneShot("NEW_LEVEL");
+        AudioManager.Instance.PlaySFXOneShot("NEW_LEVEL", false);
         _sceneTransitionAnimator.SetTrigger("Start");
     }
 

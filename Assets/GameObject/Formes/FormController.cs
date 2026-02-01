@@ -80,7 +80,7 @@ public class FormController : MonoBehaviour
     {
         if (_state == EGeometricsState.Dragging) return; 
         
-        AudioManager.Instance.PlaySFXOneShot("ON_HOVERED");
+        AudioManager.Instance.PlaySFXOneShot("ON_HOVERED", true);
     }
 
     private void OnMouseOver()
@@ -183,7 +183,7 @@ public class FormController : MonoBehaviour
         {
             center /= validVertexCount;
             transform.position = center;
-            AudioManager.Instance.PlaySFXOneShot("LOCK");
+            AudioManager.Instance.PlaySFXOneShot("LOCK", false);
         }
 
         _state = EGeometricsState.Snapped;
@@ -209,7 +209,7 @@ public class FormController : MonoBehaviour
         transform.position = _firstPosition;
         _state = EGeometricsState.Idle;
         _canBeSnapped = false;
-        AudioManager.Instance.PlaySFXOneShot("DROP");
+        AudioManager.Instance.PlaySFXOneShot("DROP", false);
     }
 
     #endregion

@@ -49,10 +49,15 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlaySFXOneShot(string iD)
+    public void PlaySFXOneShot(string iD, bool changePitch)
     {
         SoundData sound = DatabaseManager.Instance.GetSFXByID(iD);
         _SFXSource.PlayOneShot(sound.AudioClip, sound.Volume);
+
+        if (changePitch)
+        {
+            _SFXSource.pitch = Random.Range(0.9f, 1.4f);
+        }
     }
 
     public void PlayMusic(string iD)
