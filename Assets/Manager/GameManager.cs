@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
     [SerializeField] private Animator _sceneTransitionAnimator;
+    [SerializeField] private Texture2D _mouseCursorHover = null;
+    [SerializeField] private Texture2D _mouseCursorUnhover = null;
 
     public static GameManager Instance { get => _instance; set => _instance = value; }
     private PuzzleFormGrid _actualFormGrid;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
     public PuzzleFormGrid ActualFormGrid { get => _actualFormGrid; set => _actualFormGrid = value; }
     public bool InTransition { get => _inTransition; set => _inTransition = value; }
     public MainMenuFormGrid MainMenuFormGrid { get => _mainMenuFormGrid; set => _mainMenuFormGrid = value; }
+    public Texture2D MouseCursorHover { get => _mouseCursorHover; set => _mouseCursorHover = value; }
+    public Texture2D MouseCursorUnhover { get => _mouseCursorUnhover; set => _mouseCursorUnhover = value; }
 
     void Awake()
     {

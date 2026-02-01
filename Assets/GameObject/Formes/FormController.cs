@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class FormController : MonoBehaviour
 {
@@ -95,14 +94,26 @@ public class FormController : MonoBehaviour
         if (_state != EGeometricsState.Dragging && GameManager.Instance.InTransition == false)
         {
             _formsAnimator.SetBool("CanHover", true);
+            SetCursor(0, 1, GameManager.Instance.MouseCursorHover);
         }
     }
 
     private void OnMouseExit()
     {
+
         if (_formsAnimator == null) return;
 
         _formsAnimator.SetBool("CanHover", false);
+        SetCursor(0, 1, GameManager.Instance.MouseCursorUnhover);
+    }
+
+    private void SetCursor(float xValue, float yValue, Texture2D texture)
+    {
+        Vector2 hotSpot;
+        hotSpot.x = xValue;
+        hotSpot.y = yValue;
+
+        Cursor.SetCursor(texture, hotSpot, CursorMode.Auto);
     }
 
     #endregion

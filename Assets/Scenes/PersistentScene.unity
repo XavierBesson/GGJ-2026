@@ -703,6 +703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneTransitionAnimator: {fileID: 192050314}
+  _mouseCursorHover: {fileID: -8328923581568760697, guid: bc61ebcf95e55764684bd103a7d72b9a, type: 3}
+  _mouseCursorUnhover: {fileID: -8328923581568760697, guid: 5deb4ef62a704d44b8cc653889b1ea22, type: 3}
 --- !u!4 &1457488816
 Transform:
   m_ObjectHideFlags: 0
