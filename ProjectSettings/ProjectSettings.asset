@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Fill It
-  defaultCursor: {fileID: -8328923581568760697, guid: 5deb4ef62a704d44b8cc653889b1ea22, type: 3}
+  defaultCursor: {fileID: -8328923581568760697, guid: bc61ebcf95e55764684bd103a7d72b9a, type: 3}
   cursorHotspot: {x: 0, y: 1}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -290,7 +290,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: -8328923581568760697, guid: 5deb4ef62a704d44b8cc653889b1ea22, type: 3}
+      m_Icon: {fileID: -8328923581568760697, guid: bc61ebcf95e55764684bd103a7d72b9a, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
