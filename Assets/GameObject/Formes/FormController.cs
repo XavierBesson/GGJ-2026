@@ -160,7 +160,7 @@ public class FormController : MonoBehaviour
         }
 
 
-        Debug.Log($"Vertex validés {_checkNumberOfVertex} / {_vertexController.Length}");
+        //Debug.Log($"Vertex validés {_checkNumberOfVertex} / {_vertexController.Length}");
     }
 
     private void SnapGeometrics()
