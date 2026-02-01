@@ -924,6 +924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _SFXSource: {fileID: 1715588870}
   _musicSource: {fileID: 1715588871}
+  _inMenuSnapshot: {fileID: 24500006, guid: f0f63a8d2616c3b419cf4be9a120d518, type: 2}
+  _inGameSnapshot: {fileID: -3041176359082447739, guid: f0f63a8d2616c3b419cf4be9a120d518, type: 2}
 --- !u!82 &1715588870
 AudioSource:
   m_ObjectHideFlags: 0

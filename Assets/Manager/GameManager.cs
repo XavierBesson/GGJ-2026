@@ -62,9 +62,20 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         _sceneTransitionAnimator.SetTrigger("End");
         yield return new WaitForSeconds(1);
+        
         int currentIndexScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentIndexScene + 1);
-        _sceneTransitionAnimator.SetTrigger("Start");
+
+        if (currentIndexScene < 11)
+        {
+
+            SceneManager.LoadScene(currentIndexScene + 1);
+        }
+
+        else if (currentIndexScene == 11)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+            _sceneTransitionAnimator.SetTrigger("Start");
         InTransition = false;
     }
 

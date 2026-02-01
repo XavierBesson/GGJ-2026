@@ -29,6 +29,7 @@ public class MainMenuFormGrid : MonoBehaviour
         {
             GameManager.Instance.MainMenuFormGrid = null;
             GameManager.Instance.GoToNextLevel();
+            AudioManager.Instance.SetLowPassChange(true);
         }
         else if (_pixelCellQuit.CheckColorCondition())
         {
